@@ -13,8 +13,8 @@
 
     <TextView
         android:id="@+id/textLogin"
-        android:text="@string/Login"
-        android:textSize="30dp"
+        android:text="@string/login"
+        android:textSize="25dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
@@ -30,8 +30,8 @@
         />
     <TextView
         android:id="@+id/textPassword"
-        android:text="@string/Password"
-        android:textSize="30dp"
+        android:text="@string/password"
+        android:textSize="25dp"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/edTextLogin"
@@ -41,13 +41,14 @@
     <EditText
         android:id="@+id/edTextPass"
         android:layout_marginTop="10dp"
+        android:password="true"
         android:layout_below="@id/textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <Button
         android:id="@+id/buttonSignIn"
-        android:text="@string/SignIn"
+        android:text="@string/signIn"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
@@ -57,7 +58,7 @@
         />
     <Button
         android:id="@+id/buttonSignUp"
-        android:text="@string/SignUp"
+        android:text="@string/signUp"
         android:layout_below="@id/edTextPass"
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
