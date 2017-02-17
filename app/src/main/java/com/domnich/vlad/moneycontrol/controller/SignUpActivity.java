@@ -1,7 +1,9 @@
-package com.domnich.vlad.moneycontrol;
+package com.domnich.vlad.moneycontrol.controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.domnich.vlad.moneycontrol.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
