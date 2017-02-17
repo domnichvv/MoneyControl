@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.domnich.vlad.moneycontrol.R;
-import com.domnich.vlad.moneycontrol.SignUpActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -55,10 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK){
-            String login = data.getStringExtra("login");
-            edTextLogin.setText(login);
-
+        if(requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                String login = data.getStringExtra("login");
+                edTextLogin.setText(login);
+                String pass = data.getStringExtra("pass");
+                edTextPass.setText(pass);
+            }
         }
     }
 }
