@@ -6,4 +6,8 @@
     <string name="signIn">Sign In</string>
     <string name="signUp">Sign Up</string>
     <string name="signUpTitle">Create your account</string>
+    <string name="date">Date</string>
+    <string name="sum">Sum</string>
+    <string name="currency">Currency</string>
+    <string name="commentary">Commentary</string>
 </resources>
