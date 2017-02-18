@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_layout);
+        setContentView(R.layout.activity_main);
 
         edTextLogin = (EditText) findViewById(R.id.edTextLogin);
         edTextPass = (EditText) findViewById(R.id.edTextPass);
@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.buttonSignIn:
-
+                intent = new Intent(this, MoneyActivity.class);
+                startActivity(intent);
                 break;
             case R.id.buttonSignUp:
                 intent = new Intent(this, SignUpActivity.class);
