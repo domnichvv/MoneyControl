@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.domnich.vlad.moneycontrol.R;
 
-public class DebitActivity extends AppCompatActivity {
+public class DebitOrCreditActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
