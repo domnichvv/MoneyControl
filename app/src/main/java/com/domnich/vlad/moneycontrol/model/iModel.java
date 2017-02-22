@@ -5,4 +5,8 @@ package com.domnich.vlad.moneycontrol.model;
  */
 
 public interface iModel {
+
+    public void add(Object value);
+    public Object get(int index);
+
 }

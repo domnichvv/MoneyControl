@@ -10,4 +10,13 @@
     <string name="sum">Sum</string>
     <string name="currency">Currency</string>
     <string name="commentary">Commentary</string>
+    <string name="add_debit">Add debit</string>
+    <string name="add_credit">Add credit</string>
+    <string name="button_add">Add</string>
+    <string name="value">Value</string>
+    <string name="toast_empty_fields">Fields cannot be empty</string>
+    <string name="toast_different_pass">Different passwords</string>
+    <string name="toast_success_sign_up">You successfully sign up</string>
+    <string name="toast_success_sign_in">You successfully sign in</string>
+    <string name="toast_wrong_sign_in">User is not logged</string>
 </resources>

@@ -1,57 +1,46 @@
 package com.domnich.vlad.moneycontrol.controller;
 
-import android.app.DatePickerDialog;
-import java.util.Calendar;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.format.DateUtils;
 import android.view.View;
-import android.widget.DatePicker;
-import android.widget.EditText;
+import android.widget.ImageButton;
+
 import com.domnich.vlad.moneycontrol.R;
 
 public class MoneyActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private EditText edTextDate;
-    private Calendar calendar = Calendar.getInstance();
+    private ImageButton imButtonAddDebit, imButtonAddCredit;
+    private static final String PUT_DEBIT = "Debit";
+    private static final String PUT_CREDIT = "Credit";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_money);
 
-        edTextDate = (EditText) findViewById(R.id.edTextDate);
-        setCurrentDate();
+        imButtonAddDebit = (ImageButton) findViewById(R.id.imButtonAddDebit);
+        imButtonAddCredit = (ImageButton) findViewById(R.id.imButtonAddCredit);
+
+        imButtonAddDebit.setOnClickListener(this);
+        imButtonAddCredit.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()){
-            case R.id.edTextDate:
-                //отображаем диалоговое окно для выбора даты
-                new DatePickerDialog(this, dateSetListener,
-                        calendar.get(Calendar.YEAR),
-                        calendar.get(Calendar.MONTH),
-                        calendar.get(Calendar.DAY_OF_MONTH))
-                        .show();
+            case R.id.imButtonAddDebit:
+                intent = new Intent(this, DebitOrCreditActivity.class);
+                intent.putExtra(PUT_DEBIT, "Debit");
+                startActivity(intent);
+                break;
+            case R.id.imButtonAddCredit:
+                intent = new Intent(this, DebitOrCreditActivity.class);
+                intent.putExtra(PUT_CREDIT, "Credit");
+                startActivity(intent);
                 break;
         }
     }
 
-    //установка начальной даты
-    private void setCurrentDate(){
-        edTextDate.setText(DateUtils.formatDateTime(this, calendar.getTimeInMillis(),
-                DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR ));
-    }
-
-    //установка обработчика выбора даты
-    DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            calendar.set(Calendar.YEAR, year);
-            calendar.set(Calendar.MONTH, month);
-            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            setCurrentDate();
-        }
-    };
 }
